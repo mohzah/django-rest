@@ -1,7 +1,8 @@
 from django.core.exceptions import ValidationError
+from django.utils.deconstruct import deconstructible
 from django.utils.translation import gettext_lazy as _
 
-
+@deconstructible
 class EANValidator:
     message = _('Enter a valid EAN address.')
     code = 'invalid'
