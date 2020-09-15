@@ -18,7 +18,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
 
     def destroy(self, request, *args, **kwargs):
         instance = self.get_object()
-        if instance.is_root():
+        if instance.is_root:
             return Response(status=status.HTTP_403_FORBIDDEN)
         self.perform_destroy(instance)
         return Response(status=status.HTTP_204_NO_CONTENT)
